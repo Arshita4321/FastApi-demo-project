@@ -1,14 +1,14 @@
-version: '3.8'
-
 services:
 
   backend:
     build: ./backend
+    image: project-backend   # 👈 REQUIRED
     ports:
       - "8001:8000"
 
   frontend:
     build: ./frontend
+    image: project-frontend  # 👈 REQUIRED
     ports:
       - "3001:80"
     depends_on:
