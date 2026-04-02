@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Patient Management System</h1>
+
+<div class="form">
+    <h2>Add Patient</h2>
+    <input id="id" placeholder="ID">
+    <input id="name" placeholder="Name">
+    <input id="city" placeholder="City">
+    <input id="age" placeholder="Age">
+    <input id="gender" placeholder="male/female/others">
+    <input id="height" placeholder="Height (m)">
+    <input id="weight" placeholder="Weight (kg)">
+    <button onclick="createPatient()">Add Patient</button>
+</div>
+
+<div class="actions">
+    <button onclick="getPatients()">Load Patients</button>
+</div>
+
+<h2>Patients</h2>
+<table id="table">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>City</th><th>Age</th>
+            <th>Gender</th><th>Height</th><th>Weight</th>
+            <th>BMI</th><th>Verdict</th><th>Action</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
