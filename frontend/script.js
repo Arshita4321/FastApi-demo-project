@@ -1,5 +1,5 @@
 // ✅ IMPORTANT: use backend service name inside Docker
-const BASE_URL = "http://localhost:8001"; 
+const BASE_URL = "http://backend-service:8000"; 
 
 // CREATE
 async function createPatient() {

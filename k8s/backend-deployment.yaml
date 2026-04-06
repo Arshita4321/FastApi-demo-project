@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: patient-app
+
+spec:
+  replicas: 3   
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+      - name: backend
+        image: arshi5583/patient-backend:latest
+        ports:
+        - containerPort: 8000
+
+        volumeMounts:
+        - mountPath: /app/data
+          name: storage
+
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: patient-pvc
