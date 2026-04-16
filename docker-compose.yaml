@@ -1,15 +1,20 @@
-services:
+version: "3.9"
 
+services:
   backend:
     build: ./backend
-    image: project-backend   # 👈 REQUIRED
+    image: project-backend
+    container_name: backend-container
     ports:
       - "8001:8000"
+    restart: always
 
   frontend:
     build: ./frontend
-    image: project-frontend  # 👈 REQUIRED
+    image: project-frontend
+    container_name: frontend-container
     ports:
       - "3001:80"
     depends_on:
       - backend
+    restart: always
